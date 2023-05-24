@@ -6,13 +6,12 @@ import jakarta.ws.rs.core.Response;
 import org.example.pong.request.UsuarioRequest;
 import org.example.pong.service.UsuarioService;
 
-@Path("/v1/resource")
+@Path("/v1/resource/usuarios")
 public class UsuarioResource {
 
     private UsuarioService usuarioService = new UsuarioService();
 
     @GET
-    @Path("/usuarios")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response getUsuario() {
@@ -21,7 +20,7 @@ public class UsuarioResource {
     }
 
     @GET
-    @Path("/usuarios/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response getUsuarioById(@PathParam("id") long id) {
@@ -31,7 +30,6 @@ public class UsuarioResource {
 
 
     @POST
-    @Path("/usuarios")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postUsuario(UsuarioRequest usuarioRequest) {
@@ -40,7 +38,7 @@ public class UsuarioResource {
     }
 
     @PUT
-    @Path("/usuarios/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateUsuario(@PathParam("id") long id,UsuarioRequest usuarioRequest) {
@@ -50,7 +48,7 @@ public class UsuarioResource {
 
 
     @DELETE
-    @Path("/usuarios/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deleteUsuarioById(@PathParam("id") long id) {

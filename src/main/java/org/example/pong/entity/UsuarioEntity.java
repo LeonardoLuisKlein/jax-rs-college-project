@@ -8,6 +8,14 @@ import java.io.Serializable;
 public class UsuarioEntity implements Serializable {
 
     @Id
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "usuarios_id_seq"
+    )
+    @SequenceGenerator(
+            name = "usuarios_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @Column

@@ -53,7 +53,6 @@ public class UsuarioService {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
-            usuarioEntity.setId(usuarioRequest.getId());
             usuarioEntity.setNome(usuarioRequest.getNome());
             entityManager.persist(usuarioEntity);
             transaction.commit();
